@@ -1,7 +1,8 @@
-import react from "react";
 import Layout from "../../components/layout";
 import { useState } from "react";
 import Swal from "sweetalert2";
+import { enviarMail } from "../../lib/nodemail";
+
 
 const contacto = () => {
   const [nombre, setNombre] = useState("");
@@ -14,6 +15,9 @@ const contacto = () => {
 
   function verificar(e) {
     if (datos.every((dato) => dato != "")) {
+      const consulta_usuario = `Nombre: ${nombre} \nEmail: ${email}\nTelefono: ${telefono}\nConsulta: ${mensaje}  `
+      enviarMail(consulta_usuario,asunto)
+
     } else {
       e.preventDefault();
 
@@ -42,7 +46,7 @@ const contacto = () => {
 
           <form className="block text-2xl uppercase " action="" method="">
             <div>
-              <label for="nombre" className="block text-amber-400">
+              <label htmlFor="nombre" className="block text-amber-400">
                 Nombre
               </label>
               <input
@@ -56,7 +60,7 @@ const contacto = () => {
             </div>
 
             <div>
-              <label for="email" className="block text-amber-400">
+              <label htmlFor="email" className="block text-amber-400">
                 Email
               </label>
               <input
@@ -71,7 +75,7 @@ const contacto = () => {
             </div>
 
             <div>
-              <label for="telefono" className="block text-amber-400">
+              <label htmlFor="telefono" className="block text-amber-400">
                 Teléfono
               </label>
               <input
@@ -86,7 +90,7 @@ const contacto = () => {
             </div>
 
             <div>
-              <label for="asunto" className="block text-amber-400">
+              <label htmlFor="asunto" className="block text-amber-400">
                 Asunto
               </label>
               <input
@@ -101,7 +105,7 @@ const contacto = () => {
             </div>
 
             <div>
-              <label for="mensaje" className="block text-amber-400">
+              <label htmlFor="mensaje" className="block text-amber-400">
                 Mensaje
               </label>
               <textarea
