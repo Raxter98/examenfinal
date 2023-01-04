@@ -1,8 +1,7 @@
 import Layout from "../../components/layout";
 import { useState } from "react";
 import Swal from "sweetalert2";
-import { enviarMail } from "../../lib/nodemail";
-
+import {sendContactForm} from '../../lib/sendContactForm';
 
 const contacto = () => {
   const [nombre, setNombre] = useState("");
@@ -11,13 +10,11 @@ const contacto = () => {
   const [asunto, setAsunto] = useState("");
   const [mensaje, setMensaje] = useState("");
 
-  const datos = [nombre, email, telefono, asunto, mensaje];
+  const datos = {nombre, email, telefono, asunto, mensaje};
 
-  function verificar(e) {
-    if (datos.every((dato) => dato != "")) {
-      const consulta_usuario = `Nombre: ${nombre} \nEmail: ${email}\nTelefono: ${telefono}\nConsulta: ${mensaje}  `
-      enviarMail(consulta_usuario,asunto)
-
+  const verificar = async (e) => {
+    if (datos) {
+      await sendContactForm(datos);
     } else {
       e.preventDefault();
 
