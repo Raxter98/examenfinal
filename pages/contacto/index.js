@@ -13,7 +13,7 @@ const contacto = () => {
   const datos = {nombre, email, telefono, asunto, mensaje};
 
   const verificar = async (e) => {
-    if (datos) {
+    if (datos.nombre && datos.email && datos.telefono && datos.asunto && datos.mensaje !== '') {
       await sendContactForm(datos);
     } else {
       e.preventDefault();

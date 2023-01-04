@@ -3,8 +3,8 @@ import { mailOptions, transporter } from "../../config/nodemailer";
 const CONTACT_MESSAGE_FIELDS = {
   nombre: "Nombre",
   email: "Email",
-  telefono: "04147463839",
-  asunto: "Msunto",
+  telefono: "Telefono",
+  asunto: "Asunto",
   mensaje: "Mensaje",
 };
 
