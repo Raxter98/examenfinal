@@ -1,31 +1,105 @@
-import react from "react";
 import Link from "next/link";
 import Bounce from 'react-reveal/Bounce';
+import 'flowbite';
+import sushi2 from "../public/sushi.ico";
+import Image from "next/image";
 
 const menu = () => {
 
-    return(
-
-        <>
-           <Bounce>
-
-                <ul className="hidden md:flex text-2xl font-bold text-zinc-50  uppercase w-full ">
-                
-                    <li className="ml-10 hover:text-amber-400"> <Link href='/'> inicio </Link> </li>
-                    <li className="ml-10 hover:text-amber-400"> <Link href="/menu"> menú </Link> </li>
-                    <li className="ml-10 hover:text-amber-400"> <Link href="#"> locales </Link> </li>
-                    <li className="ml-10 hover:text-amber-400"> <Link href="#"> paises </Link> </li>
-                    <li className="ml-10 hover:text-amber-400"> <Link href="/contacto"> contacto </Link> </li>
-                
-                
-                </ul>
-            
-            </Bounce> 
-               
-        
-        </>
-
-    )
+    return (
+      <>
+        <Bounce >
+          <ul className=" md:flex text-2xl font-bold text-zinc-50  uppercase w-full ">
+            <nav class="bg-amber-400 border-gray-200 px-2 sm:px-4 w-full py-2.5 rounded dark:bg-gray-900">
+              <div class="container flex flex-wrap items-center justify-between mx-auto">
+                <Link href="https://flowbite.com/" class="flex items-center">
+                  <Image
+                    src={sushi2}
+                    class="h-6 mr-3 sm:h-9 w-8"
+                    width={1000 / 10}
+                    height={3000 / 10}
+                    alt="Flowbite Logo"
+                  />
+                  <span class="self-center text-xl font-semibold whitespace-nowrap text-black ">
+                    SushiNext.Js
+                  </span>
+                </Link>
+                <button
+                  data-collapse-toggle="navbar-default"
+                  type="button"
+                  class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                  aria-controls="navbar-default"
+                  aria-expanded="false"
+                >
+                  <span class="sr-only">menu de dispositivo movil</span>
+                  <svg
+                    class="w-6 h-6"
+                    aria-hidden="true"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                </button>
+                <div
+                  class="hidden w-full md:block md:w-auto"
+                  id="navbar-default"
+                >
+                  <ul class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                    <li>
+                      <Link
+                        href="/"
+                        class="block py-2 pl-3 pr-4 text-gray-700 md:hover:text-blue-700 hover:bg-gray-100  rounded md:bg-transparent  md:p-0 dark:text-white"
+                        aria-current="page"
+                      >
+                        Home
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/menu"
+                        class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                      >
+                        Menú
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/local"
+                        class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                      >
+                        Locales
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/paises"
+                        class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                      >
+                        países 
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/contacto"
+                        class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                      >
+                        Contacto
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+          </ul>
+        </Bounce>
+      </>
+    );
 }
 
 export default menu;

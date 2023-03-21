@@ -28,9 +28,9 @@ const contacto = () => {
 
   return (
     <>
-      <div className="hidden sm:flex ">
+      
         <Layout title="CONTACTO" />
-      </div>
+      
 
       <div className="flex justify-center m-36">
         <div className=" w-96 md:w-4/5 border bg-white rounded-xl p-3 shadow-2xl shadow-black">

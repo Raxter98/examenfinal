@@ -8,7 +8,11 @@ import comiendo from "../public/imagenes/comiendo.jpg";
 import Tada from "react-reveal/Tada";
 import Swal from "sweetalert2";
 
+
 export default function Home() {
+
+  
+
   const alert = () => {
     function alert() {
       Swal.fire({
@@ -27,10 +31,11 @@ export default function Home() {
   };
 
   return (
+
     <div>
-      <div className="hidden sm:flex ">
+      
         <Layout title="INICIO" />
-      </div>
+      
 
       <Jump>
         <div className="sm:flex mt-20 w-full justify-center text-6xl">

@@ -8,9 +8,9 @@ export default function Home() {
       <div >
 
 
-        <div className="hidden sm:flex ">
+        
             <Layout title="MENÚ" />  
-        </div>
+        
     
       </div>
 
