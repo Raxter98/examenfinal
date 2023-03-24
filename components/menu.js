@@ -12,7 +12,7 @@ const menu = () => {
           <ul className=" md:flex text-2xl font-bold text-zinc-50  uppercase w-full ">
             <nav class="bg-amber-400 border-gray-200 px-2 sm:px-4 w-full py-2.5 rounded dark:bg-gray-900">
               <div class="container flex flex-wrap items-center justify-between mx-auto">
-                <Link href="https://flowbite.com/" class="flex items-center">
+                <Link href="/" class="flex items-center">
                   <Image
                     src={sushi2}
                     class="h-6 mr-3 sm:h-9 w-8"
