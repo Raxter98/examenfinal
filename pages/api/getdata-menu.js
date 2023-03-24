@@ -17,7 +17,8 @@ try {
     const query = "SELECT * FROM menu"
     const values = []
     const [data] = await dbconection.execute(query, values) 
-
+    dbconection.end()
+    
     res.status(200).json({results: data })
 
 } catch (error){

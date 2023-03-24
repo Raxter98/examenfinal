@@ -17,6 +17,7 @@ try {
     const query = "SELECT * FROM locales"
     const values = []
     const [data] = await dbconection.execute(query, values) 
+    dbconection.end()
 
     res.status(200).json({results: data })
 
