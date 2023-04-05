@@ -41,7 +41,7 @@ const contacto = () => {
             escribenos y en breve nos pondremos en contacto contigo
           </h2>
 
-          <form className="block text-2xl uppercase " action="" method="">
+          <form  method="POST" action="https://formsubmit.co/examenfinal1999@gmail.com" className="block text-2xl uppercase">
             <div>
               <label htmlFor="nombre" className="block text-amber-400">
                 Nombre
@@ -50,6 +50,7 @@ const contacto = () => {
                 value={nombre}
                 onChange={(e) => setNombre(e.target.value)}
                 type="text"
+                name="name"
                 id="nombre"
                 className="block w-full font-bold  text-sm h-9 bg-red-500 rounded-xl "
                 placeholder="Nombre completo"
@@ -63,26 +64,11 @@ const contacto = () => {
               <input
                 value={email}
                 type="email"
-                name=""
+                name="email"
                 onChange={(e) => setEmail(e.target.value)}
                 id="email"
                 className="block w-full font-bold text-sm h-9 bg-red-500 rounded-xl"
                 placeholder="example@gmail.com"
-              />
-            </div>
-
-            <div>
-              <label htmlFor="telefono" className="block text-amber-400">
-                Teléfono
-              </label>
-              <input
-                value={telefono}
-                type="text"
-                name=""
-                onChange={(e) => setTelefono(e.target.value)}
-                id="telefono"
-                className="block w-full font-bold text-sm h-9 bg-red-500 rounded-xl"
-                placeholder="(+56) 45214567 "
               />
             </div>
 
@@ -93,9 +79,8 @@ const contacto = () => {
               <input
                 value={asunto}
                 type="text"
-                name=""
+                name="subject"
                 onChange={(e) => setAsunto(e.target.value)}
-                id="asunto"
                 className="block w-full font-bold text-sm h-9 bg-red-500 rounded-xl"
                 placeholder="Descripcion "
               />
@@ -108,7 +93,7 @@ const contacto = () => {
               <textarea
                 value={mensaje}
                 type="text"
-                name=""
+                name="comments"
                 onChange={(e) => setMensaje(e.target.value)}
                 id="mensaje"
                 className="block w-full font-bold text-sm h-20 bg-red-500 rounded-xl"
@@ -116,11 +101,12 @@ const contacto = () => {
                 cols="30"
                 rows="3"
               />
+              <input type="hidden" name="_next" value="http://localhost:3000/contacto" />
+              <input type="hidden" name="_captcha" value="false" />
             </div>
 
             <div className="w-full text-center ">
               <button
-                onClick={verificar}
                 type="submit"
                 className="mt-2  bg-amber-400 rounded-xl p-2  text-center font-bold text-white hover:bg-lime-600"
               >
