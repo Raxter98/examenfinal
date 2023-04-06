@@ -1,37 +1,15 @@
 import Layout from "../../components/layout";
 import { useState } from "react";
-import Swal from "sweetalert2";
-import {sendContactForm} from '../../lib/sendContactForm';
 
 const contacto = () => {
   const [nombre, setNombre] = useState("");
   const [email, setEmail] = useState("");
-  const [telefono, setTelefono] = useState("");
   const [asunto, setAsunto] = useState("");
   const [mensaje, setMensaje] = useState("");
 
-  const datos = {nombre, email, telefono, asunto, mensaje};
-
-  const verificar = async (e) => {
-    if (datos.nombre && datos.email && datos.telefono && datos.asunto && datos.mensaje !== '') {
-      await sendContactForm(datos);
-    } else {
-      e.preventDefault();
-
-      Swal.fire({
-        icon: "error",
-        title: "Lo sentimos... ",
-        text: "Debe de llenar todo el fomulario para continuar",
-      });
-    }
-  }
-
   return (
     <>
-      
-        <Layout title="CONTACTO" />
-      
-
+      <Layout title="CONTACTO" />
       <div className="flex justify-center m-36">
         <div className=" w-96 md:w-4/5 border bg-white rounded-xl p-3 shadow-2xl shadow-black">
           <h1 className="block text-4xl mb-7 uppercase text-center font-bold text-amber-400">
@@ -41,7 +19,11 @@ const contacto = () => {
             escribenos y en breve nos pondremos en contacto contigo
           </h2>
 
-          <form  method="POST" action="https://formsubmit.co/examenfinal1999@gmail.com" className="block text-2xl uppercase">
+          <form
+            method="POST"
+            action="https://formsubmit.co/examenfinal1999@gmail.com"
+            className="block text-2xl uppercase"
+          >
             <div>
               <label htmlFor="nombre" className="block text-amber-400">
                 Nombre
@@ -79,7 +61,7 @@ const contacto = () => {
               <input
                 value={asunto}
                 type="text"
-                name="subject"
+                name="_subject"
                 onChange={(e) => setAsunto(e.target.value)}
                 className="block w-full font-bold text-sm h-9 bg-red-500 rounded-xl"
                 placeholder="Descripcion "
@@ -101,7 +83,11 @@ const contacto = () => {
                 cols="30"
                 rows="3"
               />
-              <input type="hidden" name="_next" value="http://localhost:3000/contacto" />
+              <input
+                type="hidden"
+                name="_next"
+                value="http://localhost:3000/contacto"
+              />
               <input type="hidden" name="_captcha" value="false" />
             </div>
 
